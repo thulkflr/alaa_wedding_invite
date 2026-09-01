@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800">
+  <rect width="640" height="800" fill="#17372e"/><g fill="none" stroke="#b79a62" opacity=".5"><path d="M80 80h480v640H80z"/><path d="M95 95h450v610H95z"/><path d="m320 130 100 140-100 140-100-140Z"/><circle cx="320" cy="270" r="76"/></g>
+  <text x="320" y="510" text-anchor="middle" fill="#f3ebdd" font-size="31" font-family="serif" direction="rtl">[الصورة الثالثة]</text>
+  <text x="320" y="552" text-anchor="middle" fill="#b79a62" font-size="20" font-family="sans-serif" direction="rtl">لحظة من بداية الحكاية</text>
+</svg>

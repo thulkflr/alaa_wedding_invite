@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800">
+  <rect width="640" height="800" fill="#d8c9ae"/><path d="M0 0h640v800H0z" fill="#0e3028" opacity=".08"/>
+  <g fill="none" stroke="#b79a62" opacity=".55"><path d="M320 120 410 260l-90 140-90-140Z"/><circle cx="320" cy="260" r="110"/><path d="M70 720h500M110 680h420"/></g>
+  <text x="320" y="485" text-anchor="middle" fill="#0e3028" font-size="31" font-family="serif" direction="rtl">[الصورة الأولى]</text>
+  <text x="320" y="530" text-anchor="middle" fill="#796744" font-size="20" font-family="sans-serif" direction="rtl">استبدلوا هذا الملف بصورة حقيقية</text>
+</svg>

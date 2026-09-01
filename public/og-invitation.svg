@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#071713"/>
+  <g fill="none" stroke="#B79A62" opacity=".32"><path d="M35 35h1130v560H35z"/><path d="M51 51h1098v528H51z"/><path d="M600 62 660 150l-60 88-60-88Z"/><circle cx="600" cy="150" r="68"/></g>
+  <text x="600" y="310" text-anchor="middle" fill="#F3EBDD" font-size="76" font-family="serif" direction="rtl">بدايةٌ على مودة</text>
+  <text x="600" y="395" text-anchor="middle" fill="#B79A62" font-size="42" font-family="serif" direction="rtl">[اسم العريس]  ❈  [اسم العروس]</text>
+  <text x="600" y="470" text-anchor="middle" fill="#F3EBDD" opacity=".72" font-size="25" font-family="sans-serif" direction="rtl">دعوة زفاف</text>
+</svg>
