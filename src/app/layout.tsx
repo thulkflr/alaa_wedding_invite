@@ -1,12 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Aref_Ruqaa, Noto_Naskh_Arabic, Tajawal } from "next/font/google";
+import { Amiri_Quran, Aref_Ruqaa } from "next/font/google";
 import { invitation } from "@/config/invitation";
 import { withBasePath } from "@/lib/assets";
 import "./globals.css";
 
-const naskh = Noto_Naskh_Arabic({ subsets: ["arabic"], variable: "--font-naskh", display: "swap" });
 const ruqaa = Aref_Ruqaa({ subsets: ["arabic"], weight: ["400", "700"], variable: "--font-ruqaa", display: "swap" });
-const tajawal = Tajawal({ subsets: ["arabic"], weight: ["400", "500", "700"], variable: "--font-ui", display: "swap" });
+const quran = Amiri_Quran({ subsets: ["arabic"], weight: "400", variable: "--font-quran", display: "swap" });
 
 const githubOwner = process.env.GITHUB_REPOSITORY_OWNER;
 const githubPagesUrl = githubOwner
@@ -49,8 +48,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ar" dir="rtl" className={`${naskh.variable} ${ruqaa.variable} ${tajawal.variable}`}>
-      <body>{children}</body>
+    <html lang="ar" dir="rtl" className={`${ruqaa.variable} ${quran.variable}`}>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

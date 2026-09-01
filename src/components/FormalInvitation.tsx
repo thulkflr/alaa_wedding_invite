@@ -10,10 +10,9 @@ export function FormalInvitation({ config }: { config: InvitationConfig }) {
       <motion.div className="formalCard" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .25 }} transition={{ duration: 1 }}>
         <span className="miniBasmala">بسم الله الرحمن الرحيم</span>
         <p id="formal-title">يتشرف</p>
-        <p>أبناء المرحوم الحاج</p>
         <strong>{config.groomFamily}</strong>
         <Ornament className="ornament small" />
-        <p>{config.formalInvitation.replace("يتشرف أبناء المرحوم الحاج ", "")}</p>
+        <p>{config.formalInvitation}</p>
         <p>بمناسبة زفاف ابنهم</p>
         <h2>{config.groom}</h2>
         <span className="nameJoin">❈</span>
@@ -22,6 +21,12 @@ export function FormalInvitation({ config }: { config: InvitationConfig }) {
         <h2>{config.bride}</h2>
       </motion.div>
       <motion.div className="coupleMoment" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: .55 }} transition={{ duration: 1.2 }}>
+        <div className="couplePrayer">
+          <span className="prayerMark" aria-hidden="true">﴿</span>
+          <p>رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</p>
+          <span className="prayerMark" aria-hidden="true">﴾</span>
+          <cite>الفرقان: 74</cite>
+        </div>
         {config.showMonogram && config.monogram && <div className="monogram" aria-label={`رمز ${config.groom} و${config.bride}`}>{config.monogram}</div>}
         <div className="coupleNames"><span>{config.groom}</span><i>❈</i><span>{config.bride}</span></div>
         <p>وجمع بينهما بالمودة والرحمة</p>

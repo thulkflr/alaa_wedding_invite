@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { InvitationConfig } from "@/config/invitation";
 import { withBasePath } from "@/lib/assets";
 import { ArabicGate } from "./ArabicGate";
@@ -27,7 +27,9 @@ export function WeddingExperience({ config }: { config: InvitationConfig }) {
     return () => observer.disconnect();
   }, []);
 
-  const scrollTo = (id: string, delay = 0) => window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }), delay);
+  const scrollTo = useCallback((id: string, delay = 0) => window.setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" }), delay), []);
+  const openGate = useCallback(() => setGateOpen(true), []);
+  const continueFromGate = useCallback(() => scrollTo("invitation"), [scrollTo]);
   const replay = () => {
     setGateOpen(false);
     document.getElementById("intro")?.scrollIntoView({ behavior: "smooth" });
@@ -47,7 +49,7 @@ export function WeddingExperience({ config }: { config: InvitationConfig }) {
       <QuickNavigation config={config} onReplay={replay} />
       <EnvelopeIntro onComplete={() => scrollTo("verse", 80)} onSkip={() => scrollTo("venue")} />
       <VerseScene onDiscover={() => { setGateOpen(true); scrollTo("gate", 80); }} />
-      <ArabicGate open={gateOpen} />
+      <ArabicGate open={gateOpen} onOpen={openGate} onContinue={continueFromGate} />
       <FormalInvitation config={config} />
       <WeddingDate config={config} />
       <VenueDetails config={config} />
