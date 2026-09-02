@@ -50,7 +50,7 @@ export const invitation: InvitationConfig = {
   mapsUrl: "https://maps.app.goo.gl/ojBHpNhoH3vUyc8z8",
   personalMessage:
     "يا أخي الحبيب، في يومك الأجمل أسأل الله أن يجعل بيتكما سكنًا، وأن يكتب لكما في كل خطوة مودةً ورحمة. فرحتنا بكما لا تكتمل إلا بمن نحب.",
-  messageAuthor: "أخوك المحب : ذو الكفــل ربابـعـه",
+  messageAuthor: "أخوك المحب : ذو الكفــل",
   audioSrc: undefined,
   images: [],
   showGallery: false,
