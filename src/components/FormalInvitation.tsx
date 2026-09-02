@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { InvitationConfig } from "@/config/invitation";
 import { Ornament } from "./ui/Ornament";
+import { SceneContinue } from "./ui/SceneContinue";
 
 export function FormalInvitation({ config }: { config: InvitationConfig }) {
   const [groomInitial, brideInitial] = config.monogram
@@ -23,8 +24,9 @@ export function FormalInvitation({ config }: { config: InvitationConfig }) {
         <p>على كريمة السيد</p>
         <strong>{config.brideFamily}</strong>
         <h2>{config.bride}</h2>
+        <SceneContinue targetId="couple" label="تابعوا الدعوة" />
       </motion.div>
-      <motion.div className="coupleMoment" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: .55 }} transition={{ duration: 1.2 }}>
+      <motion.div id="couple" className="coupleMoment" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: .55 }} transition={{ duration: 1.2 }}>
         <div className="couplePrayer">
           <span className="prayerMark" aria-hidden="true">﴿</span>
           <p>رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</p>
@@ -41,6 +43,7 @@ export function FormalInvitation({ config }: { config: InvitationConfig }) {
         )}
         <div className="coupleNames"><span>{config.groom}</span><i>❈</i><span>{config.bride}</span></div>
         <p>وجمع بينهما بالمودة والرحمة</p>
+        <SceneContinue targetId="date" label="انتقلوا إلى الموعد" />
       </motion.div>
     </section>
   );

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { InvitationConfig } from "@/config/invitation";
 import { useCountdown } from "@/hooks/useCountdown";
 import { Ornament } from "./ui/Ornament";
+import { SceneContinue } from "./ui/SceneContinue";
 
 export function WeddingDate({ config }: { config: InvitationConfig }) {
   const countdown = useCountdown(config.weddingDateISO);
@@ -35,6 +36,7 @@ export function WeddingDate({ config }: { config: InvitationConfig }) {
           ))}
         </div>
         <p className="countdownMessage" aria-live="polite">{countdown.message}</p>
+        <SceneContinue targetId="venue" label="تفاصيل الحفل" />
       </motion.div>
     </section>
   );

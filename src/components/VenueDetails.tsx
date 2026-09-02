@@ -6,6 +6,7 @@ import { AddToCalendar } from "./AddToCalendar";
 import { ShareButton } from "./ShareButton";
 import { MapIcon } from "./ui/Icons";
 import { Ornament } from "./ui/Ornament";
+import { SceneContinue } from "./ui/SceneContinue";
 
 export function VenueDetails({ config }: { config: InvitationConfig }) {
   return (
@@ -25,6 +26,7 @@ export function VenueDetails({ config }: { config: InvitationConfig }) {
           <ShareButton config={config} />
         </div>
         <p className="gentleNote">حضوركم هو أجمل هدايانا</p>
+        <SceneContinue targetId="finale" label="متابعة إلى الختام" />
       </motion.div>
     </section>
   );

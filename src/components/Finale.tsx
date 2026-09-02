@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import type { InvitationConfig } from "@/config/invitation";
 import { PhotoMemories } from "./PhotoMemories";
 import { Ornament } from "./ui/Ornament";
+import { SceneContinue } from "./ui/SceneContinue";
 
 export function Finale({ config }: { config: InvitationConfig }) {
   return (
@@ -16,9 +17,10 @@ export function Finale({ config }: { config: InvitationConfig }) {
           <Ornament className="ornament" />
           <p>{config.personalMessage}</p>
           <strong>{config.messageAuthor}</strong>
+          <SceneContinue targetId="final-blessing" label="الدعاء الختامي" />
         </motion.div>
       )}
-      <div className="finalBlessing">
+      <div id="final-blessing" className="finalBlessing">
         <div className="blessingMark" aria-hidden="true">❈</div>
         <p>بارك الله لكما<br />وبارك عليكما<br />وجمع بينكما في خير</p>
         <Ornament className="ornament" />
