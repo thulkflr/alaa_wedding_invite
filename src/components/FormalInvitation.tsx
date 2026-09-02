@@ -5,6 +5,10 @@ import type { InvitationConfig } from "@/config/invitation";
 import { Ornament } from "./ui/Ornament";
 
 export function FormalInvitation({ config }: { config: InvitationConfig }) {
+  const [groomInitial, brideInitial] = config.monogram
+    ?.split("❈")
+    .map((letter) => letter.trim()) ?? [];
+
   return (
     <section id="invitation" className="scene formalScene paperScene" aria-labelledby="formal-title" data-scene>
       <motion.div className="formalCard" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .25 }} transition={{ duration: 1 }}>
@@ -27,7 +31,14 @@ export function FormalInvitation({ config }: { config: InvitationConfig }) {
           <span className="prayerMark" aria-hidden="true">﴾</span>
           <cite>الفرقان: 74</cite>
         </div>
-        {config.showMonogram && config.monogram && <div className="monogram" aria-label={`رمز ${config.groom} و${config.bride}`}>{config.monogram}</div>}
+        {config.showMonogram && groomInitial && brideInitial && (
+          <div className="monogram" aria-label={`رمز ${config.groom} و${config.bride}`}>
+            <span className="monogramLetter monogramGroom">{groomInitial}</span>
+            <i className="monogramKnot" aria-hidden="true">✦</i>
+            <span className="monogramLetter monogramBride">{brideInitial}</span>
+            <small aria-hidden="true">مَوَدَّةٌ وَرَحْمَة</small>
+          </div>
+        )}
         <div className="coupleNames"><span>{config.groom}</span><i>❈</i><span>{config.bride}</span></div>
         <p>وجمع بينهما بالمودة والرحمة</p>
       </motion.div>

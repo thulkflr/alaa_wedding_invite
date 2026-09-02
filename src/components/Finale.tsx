@@ -12,7 +12,7 @@ export function Finale({ config }: { config: InvitationConfig }) {
       {config.showPersonalMessage && config.personalMessage && (
         <motion.div className="personalLetter" initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .3 }} transition={{ duration: .9 }}>
           <span className="eyebrow">كلمة محبة</span>
-          <h2>إلى صديقي العزيز…</h2>
+          <h2>إلى أخي العزيز…</h2>
           <Ornament className="ornament" />
           <p>{config.personalMessage}</p>
           <strong>{config.messageAuthor}</strong>

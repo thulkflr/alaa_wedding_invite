@@ -12,12 +12,14 @@ const githubPagesUrl = githubOwner
   ? `https://${githubOwner}.github.io${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/`
   : undefined;
 const siteUrl = invitation.siteUrl ?? githubPagesUrl ?? "https://example.github.io/repository-name/";
+const shareImageUrl = new URL(invitation.shareImage.replace(/^\//, ""), siteUrl).toString();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: `بدايةٌ على مودة | زفاف ${invitation.groom} و${invitation.bride}`,
   description: `دعوة لحضور حفل زفاف ${invitation.groom} و${invitation.bride} ومشاركتنا بدايةً على مودة ورحمة.`,
   applicationName: "بدايةٌ على مودة",
+  alternates: { canonical: siteUrl },
   robots: { index: true, follow: true },
   icons: {
     icon: [{ url: withBasePath("/favicon.svg"), type: "image/svg+xml" }],
@@ -26,15 +28,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ar_JO",
+    url: siteUrl,
+    siteName: "بدايةٌ على مودة",
     title: `دعوة زفاف ${invitation.groom} و${invitation.bride}`,
-    description: "يسرّنا حضوركم ومشاركتنا فرحتنا",
-    images: [{ url: withBasePath(invitation.shareImage), width: 1200, height: 630, alt: "بدايةٌ على مودة — دعوة زفاف" }],
+    description: `يسرّ ${invitation.groom} و${invitation.bride} حضوركم ومشاركتهم فرحتهم ${invitation.arabicDay}، ${invitation.writtenGregorianDate}.`,
+    images: [{ url: shareImageUrl, width: 1200, height: 630, alt: `دعوة زفاف ${invitation.groom} و${invitation.bride}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: `دعوة زفاف ${invitation.groom} و${invitation.bride}`,
-    description: "يسرّنا حضوركم ومشاركتنا فرحتنا",
-    images: [withBasePath(invitation.shareImage)],
+    description: `يسرّ ${invitation.groom} و${invitation.bride} حضوركم ومشاركتهم فرحتهم ${invitation.arabicDay}.`,
+    images: [shareImageUrl],
   },
 };
 

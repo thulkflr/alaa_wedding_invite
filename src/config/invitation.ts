@@ -36,8 +36,8 @@ export type InvitationConfig = {
 export const invitation: InvitationConfig = {
   groom: "الدكتور علاء",
   bride: "الدكتورة رانيا",
-  groomFamily: "الأستاذ عبد الحكيم وأبناؤه",
-  brideFamily: "[اسم والد العروس]",
+  groomFamily: "الأستاذ عبد الحكيم أحمد أبو حمّاد وأبناؤه",
+  brideFamily: "أيمن طلب السميران",
   formalInvitation: "بدعوتكم لمشاركتهم فرحتهم",
   weddingDateISO: "2026-09-18T21:30:00+03:00",
   arabicDay: "يوم الجمعة",
@@ -58,7 +58,7 @@ export const invitation: InvitationConfig = {
   showMonogram: true,
   monogram: "ع  ❈  ر",
   shareImage: "/og-invitation.png",
-  siteUrl: undefined,
+  siteUrl: "https://thulkflr.github.io/alaa_wedding_invite/",
   colors: {
     ivory: "#F3EBDD",
     emerald: "#0E3028",
