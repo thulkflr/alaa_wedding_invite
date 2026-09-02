@@ -17,6 +17,14 @@ export function FormalInvitation({ config }: { config: InvitationConfig }) {
         <strong>{config.groomFamily}</strong>
         <Ornament className="ornament small" />
         <p>{config.formalInvitation}</p>
+        <p>بمناسبة زفاف ابنهم</p>
+        <h2>{config.groom}</h2>
+        <span className="nameJoin">❈</span>
+        <p>على كريمة السيد</p>
+        <strong>{config.brideFamily}</strong>
+        <h2>{config.bride}</h2>
+      </motion.div>
+      <motion.div className="coupleMoment" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: .55 }} transition={{ duration: 1.2 }}>
         <div className="couplePrayer">
           <span className="prayerMark" aria-hidden="true">﴿</span>
           <p>رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</p>
@@ -31,13 +39,8 @@ export function FormalInvitation({ config }: { config: InvitationConfig }) {
             <small aria-hidden="true">مَوَدَّةٌ وَرَحْمَة</small>
           </div>
         )}
-        <p>بمناسبة زفاف ابنهم</p>
-        <h2>{config.groom}</h2>
-        <span className="nameJoin">❈</span>
-        <p>على كريمة السيد</p>
-        <strong>{config.brideFamily}</strong>
-        <h2>{config.bride}</h2>
-        <p className="unionLine">وجمع بينهما بالمودة والرحمة</p>
+        <div className="coupleNames"><span>{config.groom}</span><i>❈</i><span>{config.bride}</span></div>
+        <p>وجمع بينهما بالمودة والرحمة</p>
       </motion.div>
     </section>
   );

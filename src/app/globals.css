@@ -21,7 +21,7 @@ a { color: inherit; text-decoration: none; }
 .skipLink { position: fixed; z-index: 1000; inset-inline-start: 1rem; top: -5rem; padding: .65rem 1rem; background: var(--ivory); color: var(--night); border-radius: 99px; transition: top .2s; }
 .skipLink:focus { top: 1rem; }
 
-.scene { position: relative; min-height: auto; display: grid; place-items: center; overflow: clip; isolation: isolate; padding: clamp(3.5rem, 7vw, 6rem) clamp(1rem, 5vw, 5rem); }
+.scene { position: relative; min-height: 100vh; min-height: 100svh; display: grid; place-items: center; overflow: clip; isolation: isolate; padding: clamp(4rem, 9vw, 8rem) clamp(1rem, 5vw, 5rem); }
 .paperScene { background-color: var(--ivory); background-image: var(--pattern-image), radial-gradient(circle at 15% 10%, rgba(255,255,255,.7), transparent 32%), linear-gradient(102deg, rgba(125,94,44,.035), transparent 24%, rgba(125,94,44,.025)); background-size: 250px, auto, auto; }
 .paperScene::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .22; mix-blend-mode: multiply; background-image: repeating-radial-gradient(circle at 20% 30%, rgba(79, 51, 34, .15) 0 .45px, transparent .6px 3px); background-size: 7px 7px; }
 .eyebrow { display: block; margin-bottom: .65rem; color: var(--gold); font-family: var(--font-ruqaa), serif; font-size: .82rem; font-weight: 700; letter-spacing: .06em; }
@@ -32,7 +32,7 @@ a { color: inherit; text-decoration: none; }
 .actionButton svg { width: 1.15rem; height: 1.15rem; flex: 0 0 auto; }
 
 /* الفصل الأول: الظرف */
-.introScene { min-height: 100vh; min-height: 100svh; color: var(--ivory); background: var(--night); grid-template-rows: auto 1fr auto auto; text-align: center; padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
+.introScene { color: var(--ivory); background: var(--night); grid-template-rows: auto 1fr auto auto; text-align: center; padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
 .introScene::before { content: ""; position: absolute; inset: 0; opacity: .18; background: var(--pattern-image) center/290px; filter: invert(1); }
 .ambientGlow { position: absolute; width: min(80vw, 46rem); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(183,154,98,.22), rgba(14,48,40,.1) 45%, transparent 70%); filter: blur(8px); animation: breathe 5s ease-in-out infinite alternate; }
 .introCopy { align-self: end; z-index: 2; padding-top: 1rem; }
@@ -57,7 +57,7 @@ a { color: inherit; text-decoration: none; }
 .introFoot { z-index: 2; margin-top: 1.25rem; color: rgba(243,235,221,.48); font-size: .75rem; }
 
 /* الآية */
-.verseScene { text-align: center; }
+.verseScene { text-align: center; min-height: 110vh; }
 .verseContent { position: relative; z-index: 2; width: min(52rem, 100%); }
 .basmala { margin: 0 0 1.6rem; color: var(--emerald); font-family: var(--font-quran), "Amiri", serif; font-size: clamp(1.65rem, 4.5vw, 2.55rem); line-height: 1.9; }
 .verseContent blockquote { margin: 0 auto; }
@@ -71,10 +71,10 @@ a { color: inherit; text-decoration: none; }
 .cornerBottom { inset: auto auto -5rem -5rem; }
 
 /* البوابة */
-.gateScene { min-height: min(72svh, 38rem); color: var(--ivory); background: #06130f; perspective: 1500px; }
+.gateScene { min-height: 105vh; color: var(--ivory); background: #06130f; perspective: 1500px; }
 .gateScene::before { content: ""; position: absolute; inset: 0; opacity: .16; background: var(--pattern-image) center/260px; filter: invert(1); }
 .gateLight { position: absolute; width: min(55rem, 95vw); height: 85%; opacity: .25; background: radial-gradient(ellipse, rgba(243,235,221,.96), rgba(183,154,98,.3) 42%, transparent 72%); filter: blur(3px); }
-.gateArchitecture { position: relative; z-index: 2; width: min(28rem, 82vw); height: min(53svh, 31rem); perspective: 1300px; border: clamp(.7rem, 2vw, 1.2rem) solid #183b32; border-bottom: 0; border-radius: 50% 50% 0 0 / 27% 27% 0 0; box-shadow: 0 0 0 2px var(--gold), 0 0 0 12px #09241d, 0 25px 70px rgba(0,0,0,.45); overflow: hidden; }
+.gateArchitecture { position: relative; z-index: 2; width: min(34rem, 88vw); height: min(75vh, 43rem); perspective: 1300px; border: clamp(.7rem, 2vw, 1.2rem) solid #183b32; border-bottom: 0; border-radius: 50% 50% 0 0 / 27% 27% 0 0; box-shadow: 0 0 0 2px var(--gold), 0 0 0 12px #09241d, 0 25px 70px rgba(0,0,0,.45); overflow: hidden; }
 .gateArch { position: absolute; z-index: 4; inset: 1.2rem 1.2rem auto; height: 31%; border: 1px solid rgba(183,154,98,.7); border-bottom: 0; border-radius: 50% 50% 0 0 / 80% 80% 0 0; pointer-events: none; }
 .gateArch i { position: absolute; width: .55rem; height: .55rem; top: 36%; border: 1px solid var(--gold); transform: rotate(45deg); }
 .gateArch i:nth-child(1) { left: 22%; }.gateArch i:nth-child(2) { left: 49%; }.gateArch i:nth-child(3) { right: 22%; }
@@ -93,8 +93,8 @@ a { color: inherit; text-decoration: none; }
 .gateContinue:hover { transform: translateY(-2px); background: var(--night); }
 
 /* الإعلان الرسمي */
-.formalScene { display: block; min-height: auto; padding-block: clamp(4rem, 8vw, 6rem); text-align: center; }
-.formalCard { position: relative; z-index: 1; width: min(40rem, 100%); min-height: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; padding: clamp(2.2rem, 7vw, 4rem) clamp(1rem, 7vw, 4rem); border: 1px solid rgba(183,154,98,.7); background: rgba(250,245,236,.63); box-shadow: var(--shadow); }
+.formalScene { display: block; min-height: auto; padding-block: clamp(5rem, 10vw, 9rem); text-align: center; }
+.formalCard { position: relative; z-index: 1; width: min(40rem, 100%); min-height: 48rem; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto; padding: clamp(2.2rem, 8vw, 5rem) clamp(1rem, 7vw, 4rem); border: 1px solid rgba(183,154,98,.7); background: rgba(250,245,236,.63); box-shadow: var(--shadow); }
 .formalCard::before, .formalCard::after { content: ""; position: absolute; inset: .55rem; border: 1px solid rgba(183,154,98,.25); pointer-events: none; }
 .formalCard::after { inset: 1rem; border-color: rgba(14,48,40,.1); }
 .formalCard p { margin: .22rem 0; font-size: clamp(1.05rem, 3vw, 1.4rem); }
@@ -102,43 +102,46 @@ a { color: inherit; text-decoration: none; }
 .formalCard h2 { margin: .35rem 0; color: var(--brown); font-family: var(--font-ruqaa), serif; font-size: clamp(2.3rem, 8vw, 4.4rem); font-weight: 400; line-height: 1.3; }
 .miniBasmala { margin-bottom: 1.8rem; color: var(--gold); }
 .nameJoin { color: var(--gold); font-size: 1.2rem; }
-.couplePrayer { position: relative; width: min(34rem, 100%); margin: 1.5rem auto 1.7rem; padding: clamp(1.15rem, 3vw, 1.7rem) clamp(1rem, 4vw, 2rem) 1.35rem; color: var(--brown); border-block: 1px solid rgba(183,154,98,.46); background: rgba(255,252,246,.34); }
+.coupleMoment { position: relative; z-index: 1; min-height: 100vh; display: grid; place-content: center; padding: clamp(5rem, 10vw, 8rem) 0; }
+.couplePrayer { position: relative; width: min(39rem, calc(100vw - 2rem)); margin: 0 auto clamp(3rem, 7vw, 5rem); padding: clamp(1.5rem, 5vw, 2.6rem) clamp(1.1rem, 5vw, 3rem) 2rem; color: var(--brown); border-block: 1px solid rgba(183,154,98,.46); background: rgba(255,252,246,.34); }
 .couplePrayer::before, .couplePrayer::after { content: "❈"; position: absolute; inset-inline-start: 50%; color: var(--gold); background: var(--ivory); padding-inline: .8rem; transform: translateX(50%); }
 .couplePrayer::before { top: -.75rem; }
 .couplePrayer::after { bottom: -.75rem; }
-.couplePrayer p { display: inline; margin: 0; font-family: var(--font-quran), "Amiri", serif; font-size: clamp(1.25rem, 3.5vw, 1.75rem); line-height: 1.95; }
+.couplePrayer p { display: inline; margin: 0; font-family: var(--font-quran), "Amiri", serif; font-size: clamp(1.35rem, 4vw, 2rem); line-height: 2.1; }
 .couplePrayer .prayerMark { margin-inline: .28rem; color: var(--gold); font-family: var(--font-quran), "Amiri", serif; font-size: 1.25em; }
 .couplePrayer cite { display: block; margin-top: .8rem; color: var(--gold); font-style: normal; font-size: .88rem; }
-.monogram { position: relative; width: clamp(7.5rem, 24vw, 9rem); aspect-ratio: .86; display: block; margin: 0 auto 1.25rem; color: var(--gold); font-family: var(--font-ruqaa), serif; border: 1px solid rgba(183,154,98,.75); border-radius: 50% 50% 46% 46% / 62% 62% 38% 38%; background: rgba(255,252,246,.26); box-shadow: inset 0 0 0 .4rem var(--ivory), inset 0 0 0 calc(.4rem + 1px) rgba(183,154,98,.25), 0 12px 28px rgba(43,29,23,.06); }
+.monogram { position: relative; width: clamp(10rem, 32vw, 13rem); aspect-ratio: .86; display: block; margin: 0 auto 2.6rem; color: var(--gold); font-family: var(--font-ruqaa), serif; border: 1px solid rgba(183,154,98,.75); border-radius: 50% 50% 46% 46% / 62% 62% 38% 38%; background: rgba(255,252,246,.26); box-shadow: inset 0 0 0 .45rem var(--ivory), inset 0 0 0 calc(.45rem + 1px) rgba(183,154,98,.25), 0 15px 35px rgba(43,29,23,.06); }
 .monogram::before { content: ""; position: absolute; inset: 1.2rem 1.35rem 2.35rem; border: 1px solid rgba(183,154,98,.3); border-radius: 50% 50% 42% 42% / 60% 60% 40% 40%; }
 .monogram::after { content: ""; position: absolute; inset-inline-start: 50%; bottom: 1.95rem; width: 2.4rem; border-top: 1px solid rgba(183,154,98,.55); transform: translateX(50%); }
-.monogramLetter { position: absolute; z-index: 2; display: block; font-size: clamp(3.2rem, 9vw, 4rem); font-weight: 700; line-height: 1; text-shadow: 0 5px 14px rgba(43,29,23,.08); }
+.monogramLetter { position: absolute; z-index: 2; display: block; font-size: clamp(4.2rem, 13vw, 5.7rem); font-weight: 700; line-height: 1; text-shadow: 0 5px 14px rgba(43,29,23,.08); }
 .monogramGroom { top: 20%; inset-inline-start: 24%; color: var(--emerald); transform: rotate(-7deg); }
 .monogramBride { top: 34%; inset-inline-end: 24%; color: var(--gold); transform: rotate(8deg); }
 .monogramKnot { position: absolute; z-index: 3; top: 48%; inset-inline-start: 50%; display: grid; place-items: center; width: 1.25rem; aspect-ratio: 1; color: var(--brown); background: var(--ivory); border: 1px solid rgba(183,154,98,.55); border-radius: 50%; font-size: .55rem; font-style: normal; transform: translate(50%, -50%); }
 .monogram small { position: absolute; inset-inline: 0; bottom: .55rem; color: var(--gold); font-size: .68rem; letter-spacing: .08em; }
-.unionLine { margin-top: .8rem !important; color: var(--gold); }
+.coupleNames { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: clamp(.8rem, 3vw, 2rem); color: var(--emerald); font-family: var(--font-ruqaa), serif; font-size: clamp(2.3rem, 8vw, 5rem); }
+.coupleNames i { color: var(--gold); font-size: .35em; font-style: normal; }
+.coupleMoment p { color: var(--brown); font-size: clamp(1.15rem, 3vw, 1.55rem); }
 
 /* التاريخ */
 .dateScene { color: var(--ivory); text-align: center; background: var(--emerald); }
 .dateScene::before { content: ""; position: absolute; inset: 0; opacity: .13; background: var(--pattern-image) center/240px; filter: invert(1); }
 .dateContent { position: relative; z-index: 1; width: min(52rem, 100%); }
 .dateContent h2, .venueCard h2, .memories h2, .personalLetter h2 { margin: 0; font-family: var(--font-ruqaa), serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 400; line-height: 1.4; }
-.calendarDate { display: grid; justify-items: center; gap: .1rem; margin-block: .8rem 1.6rem; }
-.calendarDate strong { font-family: var(--font-ruqaa), serif; font-size: clamp(4.5rem, 17vw, 7rem); line-height: 1; font-weight: 400; color: var(--gold); font-variant-numeric: tabular-nums; }
+.calendarDate { display: grid; justify-items: center; gap: .1rem; margin-block: 1.2rem 2.5rem; }
+.calendarDate strong { font-family: var(--font-ruqaa), serif; font-size: clamp(5rem, 20vw, 9rem); line-height: 1; font-weight: 400; color: var(--gold); font-variant-numeric: tabular-nums; }
 .calendarDate span { font-size: 1.2rem; }
 .calendarDate small { margin-top: .5rem; color: rgba(243,235,221,.7); }
 .countdown { direction: ltr; display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid rgba(183,154,98,.34); }
-.countdown div { display: grid; gap: .3rem; padding: .75rem .25rem; position: relative; }
+.countdown div { display: grid; gap: .3rem; padding: 1rem .25rem; position: relative; }
 .countdown div:not(:last-child)::after { content: ""; position: absolute; right: 0; top: 30%; height: 40%; border-right: 1px solid rgba(183,154,98,.3); }
 .countdown strong { font-family: var(--font-ruqaa), serif; color: var(--ivory); font-size: clamp(1.55rem, 7vw, 3.5rem); font-weight: 400; font-variant-numeric: tabular-nums; }
 .countdown span { color: var(--gold); font-size: clamp(.65rem, 2vw, .9rem); }
 .countdownMessage { min-height: 2rem; color: rgba(243,235,221,.78); font-size: 1rem; }
 
 /* الموقع */
-.venueScene { text-align: center; }
-.venueCard { position: relative; z-index: 1; width: min(46rem, 100%); padding: clamp(2.3rem, 6vw, 4rem) clamp(1rem, 6vw, 4rem); border: 1px solid rgba(183,154,98,.6); background: rgba(249,244,235,.78); box-shadow: var(--shadow); }
-.venueInfo { display: grid; gap: .4rem; margin-block: 1.2rem 1.5rem; }
+.venueScene { min-height: 110vh; text-align: center; }
+.venueCard { position: relative; z-index: 1; width: min(46rem, 100%); padding: clamp(2.5rem, 8vw, 5rem) clamp(1rem, 6vw, 4rem); border: 1px solid rgba(183,154,98,.6); background: rgba(249,244,235,.78); box-shadow: var(--shadow); }
+.venueInfo { display: grid; gap: .5rem; margin-block: 1.6rem 2rem; }
 .venueInfo strong { color: var(--emerald); font-family: var(--font-ruqaa), serif; font-size: clamp(1.8rem, 5vw, 2.7rem); }
 .venueInfo address { color: #605047; font-style: normal; }
 .venueActions { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: .7rem; }
@@ -147,11 +150,11 @@ a { color: inherit; text-decoration: none; }
 .calendarOptions { position: absolute; z-index: 4; top: calc(100% + .5rem); inset-inline: 0; display: grid; min-width: 13rem; overflow: hidden; border: 1px solid rgba(183,154,98,.45); border-radius: .6rem; background: var(--paper); box-shadow: 0 14px 35px rgba(7,23,19,.18); }
 .calendarOptions > * { border: 0; border-bottom: 1px solid rgba(183,154,98,.2); padding: .7rem; color: var(--emerald); background: transparent; cursor: pointer; }
 .calendarOptions > *:hover { background: rgba(183,154,98,.1); }
-.gentleNote { margin: 1.7rem 0 0; color: var(--gold); }
+.gentleNote { margin: 2.5rem 0 0; color: var(--gold); }
 .toast { position: fixed; z-index: 200; inset-inline-start: 50%; bottom: max(1.5rem, env(safe-area-inset-bottom)); transform: translateX(-50%); min-width: max-content; padding: .65rem 1rem; border: 1px solid var(--gold); border-radius: 99px; color: var(--ivory); background: var(--night); font-family: var(--font-ruqaa), serif; font-size: .9rem; box-shadow: 0 12px 30px rgba(0,0,0,.25); }
 
 /* الألبوم والرسالة والختام */
-.finaleScene { position: relative; overflow: hidden; min-height: auto; padding: clamp(4rem, 8vw, 6rem) clamp(1rem, 5vw, 5rem) max(5rem, calc(4rem + env(safe-area-inset-bottom))); text-align: center; }
+.finaleScene { position: relative; overflow: hidden; min-height: 100vh; padding: clamp(5rem, 10vw, 9rem) clamp(1rem, 5vw, 5rem) max(7rem, calc(5rem + env(safe-area-inset-bottom))); text-align: center; }
 .memories, .personalLetter, .finalBlessing { position: relative; z-index: 1; }
 .memories { width: min(72rem, 100%); margin: 0 auto 10rem; }
 .album { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: clamp(1rem, 3vw, 2.2rem); margin-top: 3rem; }
@@ -159,25 +162,16 @@ a { color: inherit; text-decoration: none; }
 .album figure:nth-child(2) { transform: translateY(2rem); }
 .album img { display: block; width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; background: #d6c6aa; }
 .album figcaption { margin-top: .6rem; color: var(--gold); font-size: .8rem; }
-.personalLetter { width: min(42rem, 100%); margin: 0 auto clamp(4.5rem, 8vw, 6rem); padding: clamp(2.3rem, 6vw, 3.7rem) clamp(1.2rem, 7vw, 4rem); background: rgba(255,252,246,.62); border-block: 1px solid rgba(183,154,98,.45); }
-.personalLetter details, .personalLetter summary { display: block; }
-.personalLetter summary { list-style: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-.personalLetter summary::-webkit-details-marker { display: none; }
-.personalLetter summary h2 { transition: color .25s; }
-.personalLetter summary:hover h2 { color: var(--emerald); }
-.letterHint { display: inline-flex; align-items: center; gap: .45rem; margin-top: .75rem; color: var(--gold); font-size: .9rem; }
-.letterHint::after { content: "+"; width: 1.45rem; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid rgba(183,154,98,.65); border-radius: 50%; line-height: 1; transition: transform .25s; }
-.personalLetter details[open] .letterHint::after { transform: rotate(45deg); }
-.letterBody { padding-top: .7rem; }
+.personalLetter { width: min(42rem, 100%); margin: 0 auto 11rem; padding: clamp(2.5rem, 8vw, 5rem) clamp(1.2rem, 7vw, 4rem); background: rgba(255,252,246,.62); border-block: 1px solid rgba(183,154,98,.45); }
 .personalLetter p { margin: 1.5rem 0; color: var(--brown); font-size: clamp(1.15rem, 3.4vw, 1.5rem); line-height: 2.15; }
 .personalLetter strong { color: var(--gold); }
-.finalBlessing { min-height: auto; display: grid; place-content: center; padding-block: 1rem; }
+.finalBlessing { min-height: 100vh; display: grid; place-content: center; }
 .blessingMark { width: 6rem; aspect-ratio: 1; display: grid; place-items: center; margin: 0 auto 2rem; border: 1px solid rgba(183,154,98,.6); border-radius: 50%; color: var(--gold); font-size: 1.5rem; }
 .finalBlessing p { margin: 0; color: var(--emerald); font-family: var(--font-ruqaa), serif; font-size: clamp(2rem, 6.5vw, 3.8rem); line-height: 1.65; }
 .finalBlessing h2 { margin: 1rem 0 .2rem; color: var(--brown); font-family: var(--font-ruqaa), serif; font-size: clamp(2rem, 7vw, 4rem); font-weight: 400; }
 .finalBlessing h2 i { color: var(--gold); font-size: .5em; font-style: normal; }
 .finalBlessing > span { color: var(--gold); }
-.finalBlessing small { display: block; margin-top: 3rem; color: #75665e; font-family: var(--font-ruqaa), serif; font-size: .82rem; line-height: 1.8; }
+.finalBlessing small { display: block; margin-top: 5rem; color: #75665e; font-family: var(--font-ruqaa), serif; font-size: .82rem; line-height: 1.8; }
 
 /* أدوات ثابتة */
 .quickNav { position: fixed; z-index: 100; inset-inline-end: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); }
@@ -200,54 +194,20 @@ a { color: inherit; text-decoration: none; }
 @keyframes prompt { 50% { opacity: .56; transform: translateY(2px); } }
 
 @media (min-width: 700px) {
+  .formalCard { min-height: 58rem; }
   .album figure:first-child { transform: rotate(-2deg); }
   .album figure:last-child { transform: rotate(2deg); }
 }
 
 @media (max-width: 430px) {
-  .scene { padding: 3.25rem 1rem; }
+  .scene { padding-inline: 1rem; }
   .introScene { padding-top: 3.8rem; }
   .envelopeButton { padding-inline: 0; }
-  .verseScene { padding-block: 3.75rem; }
-  .verseScene .basmala { margin-bottom: .75rem; }
-  .verseScene .ornament { width: 10rem; margin-block: .55rem; }
   .verseContent blockquote p { line-height: 1.85; }
-  .storyLine { margin-top: 1.6rem; }
-  .gateScene { min-height: 64svh; padding-block: 2.25rem; }
-  .gateArchitecture { width: min(22rem, 78vw); height: min(47svh, 25rem); }
-  .formalScene { padding-block: 3rem; }
-  .formalCard { padding: 2.4rem 1.1rem; }
-  .formalCard .miniBasmala { margin-bottom: 1rem; }
-  .formalCard h2 { font-size: clamp(2.15rem, 11vw, 3rem); }
-  .couplePrayer { margin-block: 1.2rem 1.4rem; padding: 1rem .8rem 1.2rem; }
-  .couplePrayer p { font-size: clamp(1.2rem, 5.7vw, 1.5rem); line-height: 1.85; }
-  .monogram { width: 7rem; margin-bottom: 1rem; }
-  .monogram::before { inset: 1rem 1.1rem 2rem; }
-  .monogramLetter { font-size: 3rem; }
-  .dateScene { padding-block: 3.5rem; }
-  .dateContent .ornament { margin-block: .45rem; }
-  .calendarDate { margin-block: .4rem 1.2rem; }
-  .calendarDate strong { font-size: 4.4rem; }
-  .countdownMessage { margin-bottom: 0; }
-  .venueScene { padding-block: 3.5rem; }
-  .venueCard { padding: 2rem 1rem; }
-  .venueCard .ornament { margin-block: .55rem; }
-  .venueInfo { margin-block: 1rem 1.3rem; }
-  .venueActions { display: grid; grid-template-columns: 1fr 1fr; }
-  .venueActions > .primaryAction { grid-column: 1 / -1; }
-  .venueActions > *, .venueActions .actionButton { width: 100%; }
-  .venueActions .actionButton { min-height: 3.2rem; padding-inline: .55rem; font-size: .88rem; }
+  .formalCard { padding-inline: 1.1rem; }
+  .venueActions, .venueActions > *, .venueActions .actionButton { width: 100%; }
   .calendarOptions { top: auto; bottom: calc(100% + .5rem); }
   .album figure:nth-child(2) { transform: none; }
-  .finaleScene { padding-top: 3.5rem; }
-  .personalLetter { margin-bottom: 2.75rem; padding: 2rem 1.2rem; }
-  .personalLetter .ornament { margin-block: .55rem; }
-  .personalLetter p { margin-block: 1rem; font-size: 1.1rem; line-height: 1.9; }
-  .finalBlessing { padding-block: 0; }
-  .blessingMark { width: 4.5rem; margin-bottom: 1.25rem; }
-  .finalBlessing p { font-size: clamp(1.75rem, 8.5vw, 2.35rem); line-height: 1.5; }
-  .finalBlessing h2 { font-size: clamp(1.85rem, 9vw, 2.5rem); }
-  .finalBlessing small { margin-top: 2.5rem; }
   .progress { inset-inline-start: .2rem; }
 }
 
