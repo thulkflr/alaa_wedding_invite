@@ -11,11 +11,18 @@ export function Finale({ config }: { config: InvitationConfig }) {
       <PhotoMemories config={config} />
       {config.showPersonalMessage && config.personalMessage && (
         <motion.div className="personalLetter" initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .3 }} transition={{ duration: .9 }}>
-          <span className="eyebrow">كلمة محبة</span>
-          <h2>إلى أخي العزيز…</h2>
-          <Ornament className="ornament" />
-          <p>{config.personalMessage}</p>
-          <strong>{config.messageAuthor}</strong>
+          <details>
+            <summary>
+              <span className="eyebrow">كلمة محبة</span>
+              <h2>إلى أخي العزيز…</h2>
+              <span className="letterHint">اضغط لقراءة الرسالة</span>
+            </summary>
+            <div className="letterBody">
+              <Ornament className="ornament" />
+              <p>{config.personalMessage}</p>
+              <strong>{config.messageAuthor}</strong>
+            </div>
+          </details>
         </motion.div>
       )}
       <div className="finalBlessing">
