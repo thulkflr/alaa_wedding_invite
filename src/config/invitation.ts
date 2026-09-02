@@ -43,7 +43,7 @@ export const invitation: InvitationConfig = {
   arabicDay: "يوم الجمعة",
   writtenGregorianDate: "الثامن عشر من ايلول 2026",
   hijriDate: "السابع من ربيع ثاني 1448هـ",
-  eventTime: "الساعة التاسعة والنصف الى الحادية عشرا مساءً",
+  eventTime: "الساعة التاسعة والنصف الى الحادية عشرا والنصف مساءً",
   eventEndTimeISO: "2026-09-18T23:30:00+03:00",
   venueName: "قاعات شهرزاد الماسية",
   venueAddress: "اربد طريق الحصن جنوب كلية غرناطة ب٢٠٠ متر",
