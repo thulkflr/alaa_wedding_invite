@@ -37,7 +37,7 @@ export const invitation: InvitationConfig = {
   groom: "الدكتور علاء",
   bride: "الدكتورة رانيا",
   groomFamily: "الأستاذ عبد الحكيم أحمد أبو حمّاد وأبناؤه",
-  brideFamily: "أيمن طلب السميران",
+  brideFamily: "أيمن طلب المساعيد",
   formalInvitation: "بدعوتكم لمشاركتهم فرحتهم",
   weddingDateISO: "2026-09-18T21:30:00+03:00",
   arabicDay: "يوم الجمعة",
